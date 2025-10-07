@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/segundo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SegundoActivity"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:layout_width="301dp"
+        android:layout_height="152dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="667dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="105dp"
+        android:layout_height="112dp"
+
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="82dp"
+
+        android:layout_marginBottom="492dp"
+        android:backgroundTint="#c2f3ff"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="100dp"
+
+        app:icon="@drawable/btn_qr"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="50dp"
+        app:iconTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:layout_width="67dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="243dp"
+        android:layout_marginTop="422dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="467dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Entrar"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="105dp"
+        android:layout_height="112dp"
+
+        android:layout_marginStart="227dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="322dp"
+
+        android:backgroundTint="#c2f3ff"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:textColor="#000000"
+
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="100dp"
+        app:icon="@drawable/btn_pesaje"
+
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="50dp"
+        app:iconTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="126dp"
+        android:layout_height="33dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Mis pesos"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="217dp"
+        tools:layout_editor_absoluteY="595dp" />
+
+    <Button
+        android:layout_width="105dp"
+        android:layout_height="112dp"
+
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="154dp"
+
+        android:layout_marginBottom="494dp"
+        android:backgroundTint="#c2f3ff"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="100dp"
+
+        app:icon="@drawable/btn_brazo"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="50dp"
+        app:iconTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="109dp"
+        android:layout_height="31dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Chatbot"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="593dp" />
+
+    <Button
+        android:layout_width="105dp"
+        android:layout_height="112dp"
+
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="151dp"
+
+        android:layout_marginBottom="129dp"
+        android:backgroundTint="#c2f3ff"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="100dp"
+
+        app:icon="@drawable/btn_chatbot"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="50dp"
+        app:iconTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:layout_width="129dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="422dp"
+        android:layout_marginEnd="205dp"
+        android:layout_marginBottom="467dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Zona Cliente"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Copyright © 2025 All rights reserved."
+        android:textColor="#000000"
+        android:textSize="10dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="859dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

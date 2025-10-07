@@ -21,10 +21,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SecondActivity"
+            android:name=".SegundoActivity"
+            android:exported="true"
+            tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="android.intent.action.SEGUNDO" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TercerActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.SECOND" />
+                <action android:name="android.intent.action.TERCERO" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CuartoActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.Cuarto" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

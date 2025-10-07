@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cuarto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CuartoActivity"
+    android:background="@color/white">
+
+    <EditText
+        android:id="@+id/fecha_nacimiento"
+        android:layout_width="335dp"
+        android:layout_height="56dp"
+        android:hint="Fecha de nacimiento"
+        android:inputType="date"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="381dp" />
+
+    <EditText
+        android:id="@+id/nombre_usuario"
+        android:layout_width="335dp"
+        android:layout_height="56dp"
+        android:hint="Nombre de usuario"
+        android:inputType="text"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="232dp" />
+
+    <EditText
+        android:id="@+id/correo_electronico"
+        android:layout_width="335dp"
+        android:layout_height="56dp"
+        android:hint="Correo electrónico"
+        android:inputType="text"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+    <Button
+        android:layout_width="218dp"
+        android:layout_height="73dp"
+        android:backgroundTint="#c2f3ff"
+        android:fontFamily="sans-serif-medium"
+        android:text="Crear cuenta"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="647dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
