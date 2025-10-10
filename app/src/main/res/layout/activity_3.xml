@@ -8,132 +8,142 @@
     android:background="@color/white"
     tools:context=".TercerActivity">
 
-    <ImageView
-        android:layout_width="186dp"
-        android:layout_height="61dp"
-        android:src="@drawable/logo"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="776dp" />
-
-    <ImageView
-        android:layout_width="247dp"
-        android:layout_height="109dp"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginBottom="705dp"
-        android:src="@drawable/zonacliente"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/btnEliminarEjercicio"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="80dp"
-        android:layout_marginTop="556dp"
-        android:layout_marginBottom="144dp"
-        android:backgroundTint="#c2f3ff"
-
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/gray"
         android:fontFamily="sans-serif"
+        android:paddingVertical="12dp"
         android:text="Eliminar ejercicio"
         android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="20dp"
-
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:cornerRadius="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@id/btnListarEjercicios"
+        app:layout_constraintWidth_percent="0.7" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginHorizontal="80dp"
-        android:layout_marginTop="344dp"
-        android:layout_marginBottom="412dp"
-        android:backgroundTint="#c2f3ff"
+        android:id="@+id/btnEditarEjercicio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/gray"
         android:fontFamily="sans-serif"
-
-        android:paddingHorizontal="34dp"
-        android:paddingVertical="5dp"
-        android:text="Añadir ejercicio"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="20dp"
-
-        android:textStyle="bold"
-        app:cornerRadius="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_marginHorizontal="80dp"
-        android:layout_marginTop="416dp"
-        android:layout_marginBottom="309dp"
-        android:backgroundTint="#c2f3ff"
-        android:fontFamily="sans-serif"
-
-        android:paddingHorizontal="34dp"
-        android:paddingVertical="5dp"
+        android:paddingVertical="12dp"
         android:text="Editar ejercicio"
         android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="20dp"
-
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:cornerRadius="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintTop_toBottomOf="@id/btnAñadirEjercicio"
+        app:layout_constraintWidth_percent="0.7" />
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/btnAñadirEjercicio"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="80dp"
-        android:layout_marginTop="484dp"
-        android:layout_marginBottom="219dp"
-        android:backgroundTint="#c2f3ff"
+        android:layout_marginTop="92dp"
+        android:backgroundTint="@color/gray"
         android:fontFamily="sans-serif"
+        android:paddingVertical="12dp"
+        android:text="Añadir ejercicio"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagenZonaCliente"
+        app:layout_constraintWidth_percent="0.7" />
 
-        android:paddingHorizontal="34dp"
-        android:paddingVertical="5dp"
+    <Button
+        android:id="@+id/btnListarEjercicios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="sans-serif"
+        android:paddingVertical="12dp"
         android:text="Listar ejercicios"
         android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="20dp"
-
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:cornerRadius="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEditarEjercicio"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <ImageView
+        android:id="@+id/imagenZonaCliente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/zonacliente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.012" />
+        app:layout_constraintWidth_percent="0.7" />
+
+    <Button
+        android:id="@+id/volver"
+        android:layout_width="118dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#D57252"
+        android:fontFamily="sans-serif"
+        android:paddingVertical="12dp"
+        android:text="Volver"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEliminarEjercicio"
+        app:layout_constraintWidth_percent="0.7" />
 
     <TextView
+        android:id="@+id/text_copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
         android:text="Copyright © 2025 All rights reserved."
         android:textColor="#000000"
-        android:textSize="10dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="859dp" />
+        android:textSize="10sp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/text_autor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Santi Martinez"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/text_copyright"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

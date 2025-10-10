@@ -24,7 +24,7 @@
         app:layout_constraintWidth_percent="0.7" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/salir"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -38,11 +38,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button3"
+        app:layout_constraintTop_toBottomOf="@id/zona_cliente"
         app:layout_constraintWidth_percent="0.7" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/zona_cliente"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -56,11 +56,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button2"
+        app:layout_constraintTop_toBottomOf="@id/acceder"
         app:layout_constraintWidth_percent="0.7" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/acceder"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
