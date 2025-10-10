@@ -6,18 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".AddEjercicio">
-
-    <EditText
-        android:id="@+id/nombreEjercicio"
-        android:layout_width="300dp"
-        android:layout_height="56dp"
-        android:hint="Nombre del ejercicio"
-        android:textAlignment="center"
-        android:inputType="date"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="494dp" />
+    tools:context=".CRUD">
 
     <EditText
         android:id="@+id/musculoTrabajado"
@@ -28,7 +17,18 @@
         android:textAlignment="center"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="659dp" />
+        tools:layout_editor_absoluteY="485dp" />
+
+    <EditText
+        android:id="@+id/nombreEjercicio"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
+        android:hint="Nombre del ejercicio"
+        android:inputType="date"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="320dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/menuDesplegable"
@@ -38,7 +38,7 @@
         android:hint="Selecciona una opción"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="582dp">
+        tools:layout_editor_absoluteY="408dp">
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView"

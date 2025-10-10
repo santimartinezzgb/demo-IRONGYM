@@ -24,14 +24,17 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_2)
-
-        val btn_iniciar = findViewById<Button?>(R.id.btn_iniciar)
+        val btn_iniciar = findViewById<Button>(R.id.btn_iniciar)
+        val registrarme = findViewById<Button>(R.id.registrarme)
 
         btn_iniciar.setOnClickListener {
-            val intent = Intent(this@MainActivity, MainActivity::class.java)
+            val intent = Intent(this, SegundoActivity::class.java)
             startActivity(intent)
         }
+        registrarme.setOnClickListener {
+            val intent = Intent(this, SegundoActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

@@ -17,47 +17,57 @@
         tools:layout_editor_absoluteY="106dp" />
 
     <EditText
-        android:id="@+id/fecha_nacimiento"
+        android:id="@+id/series_ejercicio"
         android:layout_width="300dp"
         android:layout_height="56dp"
-        android:hint="Fecha de nacimiento"
+        android:hint="Series"
         android:inputType="date"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="55dp"
         tools:layout_editor_absoluteY="494dp" />
 
     <EditText
-        android:id="@+id/correo_electronico"
+        android:id="@+id/repeticiones_ejercicio"
         android:layout_width="300dp"
         android:layout_height="56dp"
-        android:hint="Correo electrónico"
+        android:hint="Repeticiones"
+        android:inputType="date"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="574dp" />
+
+    <EditText
+        android:id="@+id/grupo_ejercicio"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
+        android:hint="Grupo muscular"
         android:inputType="text"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="55dp"
         tools:layout_editor_absoluteY="418dp" />
 
     <EditText
-        android:id="@+id/nombre_usuario"
+        android:id="@+id/nombre_ejercicio"
         android:layout_width="300dp"
         android:layout_height="56dp"
-        android:hint="Nombre de usuario"
+        android:hint="Nombre del ejercicio"
         android:inputType="text"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="55dp"
         tools:layout_editor_absoluteY="345dp" />
 
-        <Button
+    <Button
         android:layout_width="218dp"
         android:layout_height="50dp"
         android:backgroundTint="#c2f3ff"
         android:fontFamily="sans-serif-medium"
-        android:text="Crear cuenta"
+        android:text="Añadir"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="647dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="685dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
