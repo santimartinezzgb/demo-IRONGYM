@@ -58,6 +58,10 @@ class AnadirEjercicio : AppCompatActivity() {
 
                         if (response.isSuccessful) {
                             println("Ejercicio guardado: ${response.body()}")
+                            nombre_ejercicio.setText("")
+                            grupo_muscular.setText("")
+                            series_ejercicio.setText("")
+                            repeticiones_ejercicio.setText("")
                         } else {
                             println("Error en el guardado: ${response.code()}")
                         }

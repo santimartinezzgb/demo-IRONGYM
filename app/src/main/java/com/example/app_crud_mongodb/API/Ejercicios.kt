@@ -1,8 +1,8 @@
 package com.example.app_crud_mongodb.API
 
 data class Ejercicios(
-    val nombre: String,
-    val grupomuscular: String,
-    val series: String,
-    val repeticiones: String
+    var nombre: String,
+    var grupomuscular: String,
+    var series: String,
+    var repeticiones: String
 )

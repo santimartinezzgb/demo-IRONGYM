@@ -1,5 +1,6 @@
 package com.example.app_crud_mongodb
 
+import EjercicioAdapter
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -8,10 +9,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.app_crud_mongodb.API.Ejercicios
 import com.example.app_crud_mongodb.API.RetrofitClient
 import retrofit2.Call
 import retrofit2.Response
+import androidx.recyclerview.widget.RecyclerView
 
 class ListarEjercicio : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -25,12 +28,22 @@ class ListarEjercicio : AppCompatActivity() {
             insets
         }
 
+
+        val rv = findViewById<RecyclerView>(R.id.recyclerEjercicios)
+        rv.layoutManager = LinearLayoutManager(this)
+
         // Llamada a la API para listar un ejercicio
         RetrofitClient.instance.listarEjercicio().enqueue(object : retrofit2.Callback<List<Ejercicios>> {
-            override fun onResponse(p0: Call<List<Ejercicios>>, res: Response<List<Ejercicios>>) {
+            override fun onResponse(
+                p0: Call<List<Ejercicios>>,
+                res: Response<List<Ejercicios>>)
+            {
                 if (res.isSuccessful) {
-                    val ejercicio = res.body()
-                    println("Ejercicios: $ejercicio")
+                    val lista = res.body()
+                    println("EJercicios: $lista")
+                    rv.adapter = EjercicioAdapter(lista ?: emptyList())
+                } else {
+                    println("Error: ${res.code()}")
                 }
             }
             override fun onFailure(call: Call<List<Ejercicios>>, t: Throwable) {
