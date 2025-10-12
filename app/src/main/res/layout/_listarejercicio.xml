@@ -1,49 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/QR"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".QR">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/listar"
+    tools:context=".ListarEjercicio"
+    android:background="@color/white">
 
-
-    <ImageView
-        android:layout_width="553dp"
-        android:layout_height="381dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="213dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="489dp"
-        android:src="@drawable/qr"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Mis ejercicios"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="221dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Nombre Ejercicio"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="55sp"
+            android:layout_height="60sp"
+            android:backgroundTint="@color/gray"
+            android:text="E"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="55sp"
+            android:layout_height="60sp"
+            android:backgroundTint="@color/borrar"
+            android:text="X" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/volver"
         android:layout_width="118dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="592dp"
+        android:layout_height="43sp"
         android:backgroundTint="#D57252"
         android:fontFamily="sans-serif"
-        android:paddingVertical="12dp"
         android:text="Volver"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.7"
+        tools:layout_editor_absoluteY="734dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -70,5 +95,6 @@
         app:layout_constraintBottom_toTopOf="@id/text_copyright"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

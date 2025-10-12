@@ -14,7 +14,7 @@
         android:usesCleartextTraffic="true">
         <!-- Permisos para conectar -->
         <activity
-            android:name=".MainActivity"
+            android:name=".Main"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,29 +23,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SegundoActivity"
+            android:name=".Menu"
             android:exported="true"
             tools:ignore="Instantiatable">
             <intent-filter>
-                <action android:name="android.intent.action.SEGUNDO" />
+                <action android:name="android.intent.action.menu" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".TercerActivity"
+            android:name=".ZonaCliente"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.TERCERO" />
+                <action android:name="android.intent.action.zona_cliente" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".CuartoActivity"
+            android:name=".AnadirEjercicio"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.Cuarto" />
+                <action android:name="android.intent.action.anadir" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -59,6 +59,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ListarEjercicio"
+            android:exported="true"
+            tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="android.intent.action.listar" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>

@@ -2,54 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tercero"
+    android:id="@+id/zona_cliente"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".TercerActivity">
+    tools:context=".ZonaCliente">
 
     <Button
-        android:id="@+id/btnEliminarEjercicio"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="@color/gray"
-        android:fontFamily="sans-serif"
-        android:paddingVertical="12dp"
-        android:text="Eliminar ejercicio"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnListarEjercicios"
-        app:layout_constraintWidth_percent="0.7" />
-
-    <Button
-        android:id="@+id/btnEditarEjercicio"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="@color/gray"
-        android:fontFamily="sans-serif"
-        android:paddingVertical="12dp"
-        android:text="Editar ejercicio"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnAñadirEjercicio"
-        app:layout_constraintWidth_percent="0.7" />
-
-    <Button
-        android:id="@+id/btnAñadirEjercicio"
+        android:id="@+id/btnAddEjercicio"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
@@ -85,8 +45,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnEditarEjercicio"
-        app:layout_constraintWidth_percent="0.7" />
+        app:layout_constraintTop_toBottomOf="@id/btnAddEjercicio"
+        app:layout_constraintWidth_percent="0.7"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imagenZonaCliente"
@@ -104,22 +65,22 @@
     <Button
         android:id="@+id/volver"
         android:layout_width="118dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="36dp"
+        android:layout_height="43sp"
+        android:layout_marginTop="112dp"
         android:backgroundTint="#D57252"
         android:fontFamily="sans-serif"
-        android:paddingVertical="12dp"
         android:text="Volver"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnEliminarEjercicio"
-        app:layout_constraintWidth_percent="0.7" />
+        app:layout_constraintTop_toBottomOf="@id/btnListarEjercicios"
+        app:layout_constraintWidth_percent="0.7"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/text_copyright"

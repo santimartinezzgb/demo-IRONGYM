@@ -9,32 +9,36 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
-
+class Menu  : AppCompatActivity() {
     @SuppressLint("MissingInflatedId", "MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.menu)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.menu)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        val btn_iniciar = findViewById<Button>(R.id.btn_iniciar)
-        val registrarme = findViewById<Button>(R.id.registrarme)
-
-        btn_iniciar.setOnClickListener {
-            val intent = Intent(this, SegundoActivity::class.java)
-            startActivity(intent)
-        }
-        registrarme.setOnClickListener {
-            val intent = Intent(this, SegundoActivity::class.java)
-            startActivity(intent)
+        fun salirApp() {
+            finishAffinity()
         }
 
+        val acceder = findViewById<Button>(R.id.acceder)
+        val zona_cliente = findViewById<Button>(R.id.zona_cliente)
+        val salir = findViewById<Button>(R.id.salir)
+
+        acceder.setOnClickListener {
+            val intent = Intent(this, QR::class.java)
+            startActivity(intent)
+        }
+        zona_cliente.setOnClickListener {
+            val intent = Intent(this, ZonaCliente::class.java)
+            startActivity(intent)
+        }
+        salir.setOnClickListener {
+            salirApp()
+        }
     }
 }
