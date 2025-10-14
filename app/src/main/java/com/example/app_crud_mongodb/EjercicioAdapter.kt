@@ -1,28 +1,41 @@
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_crud_mongodb.API.Ejercicios
+import com.example.app_crud_mongodb.R
 
-class EjercicioAdapter(private val lista: List<Ejercicios>) :
-    RecyclerView.Adapter<EjercicioAdapter.ViewHolder>() {
+class EjercicioAdapter(
+    private val lista: List<Ejercicios>,
+    private val onEditarClick: (Ejercicios) -> Unit,
+    private val onEliminarClick: (Ejercicios) -> Unit
+) : RecyclerView.Adapter<EjercicioAdapter.ViewHolder>() {
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-        val tv = v.findViewById<TextView>(android.R.id.text1)
+        val datos: TextView = v.findViewById(R.id.datos)
+        val btnEditar: Button = v.findViewById(R.id.btnEditar)
+        val btnEliminar: Button = v.findViewById(R.id.btnEliminar)
     }
 
     override fun onCreateViewHolder(p: ViewGroup, vt: Int): ViewHolder {
         val v = LayoutInflater.from(p.context)
-            .inflate(android.R.layout.simple_list_item_1, p, false)
+            .inflate(R.layout.item, p, false)
         return ViewHolder(v)
     }
 
-
-    override fun onBindViewHolder(h: ViewHolder, pos: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, pos: Int) {
         val e = lista[pos]
-        h.tv.text = "${e.nombre} - ${e.grupomuscular} (${e.series}x${e.repeticiones})"
+        holder.datos.text = "\nEjercicio: ${e.nombre}" +
+                "\nGrupo Muscular: ${e.grupomuscular}" +
+                "\nRealizar: (${e.series}x${e.repeticiones})"
+
+        holder.btnEditar.setOnClickListener { onEditarClick(e) }
+        holder.btnEliminar.setOnClickListener { onEliminarClick(e) }
     }
 
     override fun getItemCount() = lista.size
+
 }

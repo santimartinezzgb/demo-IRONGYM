@@ -1,20 +1,22 @@
 package com.example.app_crud_mongodb.API
 
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface Api {
+
     @POST("Ejercicios")
     fun crearEjercicio(@Body nuevoEjercicio: Ejercicios): Call<Ejercicios>
 
-    @POST("Ejercicios")
-    fun editarEjercicio(): Call<List<Ejercicios>>
+    @PUT("Ejercicios/{id}")
+    fun editarEjercicio(
+        @Path("id") id: String,
+        @Body ejercicioEditado: Ejercicios
+    ): Call<Ejercicios>
 
     @GET("Ejercicios")
     fun listarEjercicio(): Call<List<Ejercicios>>
 
-    @POST("Ejercicios")
-    fun eliminarEjercicio(): Call<List<Ejercicios>>
+    @DELETE("Ejercicios/{id}")
+    fun eliminarEjercicio(@Path("id") id: String?): Call<Void>
 }

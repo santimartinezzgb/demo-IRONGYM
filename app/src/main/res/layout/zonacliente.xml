@@ -8,14 +8,14 @@
     android:background="@color/white"
     tools:context=".ZonaCliente">
 
+
     <Button
         android:id="@+id/btnAddEjercicio"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_width="215dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="48dp"
         android:backgroundTint="@color/gray"
         android:fontFamily="sans-serif"
-        android:paddingVertical="12dp"
         android:text="Añadir ejercicio"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -23,36 +23,26 @@
         android:textStyle="bold"
         app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imagenZonaCliente"
         app:layout_constraintWidth_percent="0.7" />
 
-    <Button
-        android:id="@+id/btnListarEjercicios"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="@color/gray"
-        android:fontFamily="sans-serif"
-        android:paddingVertical="12dp"
-        android:text="Listar ejercicios"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerEjercicios"
+        android:layout_width="326dp"
+        android:layout_height="444dp"
+        android:padding="15sp"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnAddEjercicio"
-        app:layout_constraintWidth_percent="0.7"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="186dp" />
 
     <ImageView
         android:id="@+id/imagenZonaCliente"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="235dp"
+        android:layout_height="89dp"
         android:layout_marginTop="76dp"
         android:adjustViewBounds="true"
         android:src="@drawable/zonacliente"
@@ -62,11 +52,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.7" />
 
+
     <Button
         android:id="@+id/volver"
         android:layout_width="118dp"
         android:layout_height="43sp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="484dp"
         android:backgroundTint="#D57252"
         android:fontFamily="sans-serif"
         android:text="Volver"
@@ -78,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnListarEjercicios"
+        app:layout_constraintTop_toBottomOf="@id/btnAddEjercicio"
         app:layout_constraintWidth_percent="0.7"
         tools:ignore="MissingConstraints" />
 

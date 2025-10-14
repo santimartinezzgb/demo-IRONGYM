@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="100dp"
+    android:layout_marginStart="30dp"
+    android:orientation="horizontal"
+    android:background="?android:attr/selectableItemBackground" >
+
+    <TextView
+        android:id="@+id/datos"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:width="200dp"
+        android:height="100dp" />
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Editar" />
+
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Eliminar" />
+    </LinearLayout>
+
+
+</LinearLayout>

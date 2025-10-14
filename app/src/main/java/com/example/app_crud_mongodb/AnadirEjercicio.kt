@@ -30,7 +30,7 @@ class AnadirEjercicio : AppCompatActivity() {
 
         val volver = findViewById<Button>(R.id.volver)
         volver.setOnClickListener {
-            val intent = Intent(this, Menu::class.java)
+            val intent = Intent(this, ZonaCliente::class.java)
             startActivity(intent)
         }
 
@@ -47,7 +47,7 @@ class AnadirEjercicio : AppCompatActivity() {
             val series = series_ejercicio.text.toString()
             val repeticiones = repeticiones_ejercicio.text.toString()
 
-            val nuevoEjercicio = Ejercicios(nombre, grupo, series, repeticiones)
+            val nuevoEjercicio = Ejercicios(null, nombre, grupo, series, repeticiones)
 
             RetrofitClient.instance.crearEjercicio(nuevoEjercicio)
                 .enqueue(object : retrofit2.Callback<Ejercicios> {
