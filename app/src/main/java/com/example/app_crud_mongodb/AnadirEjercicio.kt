@@ -3,8 +3,10 @@ package com.example.app_crud_mongodb
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,22 +14,24 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.app_crud_mongodb.API.Ejercicios
 import com.example.app_crud_mongodb.API.RetrofitClient
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 
-
 class AnadirEjercicio : AppCompatActivity() {
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout._anadirejercicio)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.anadir)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-
+        // Botón para volver
         val volver = findViewById<Button>(R.id.volver)
         volver.setOnClickListener {
             val intent = Intent(this, ZonaCliente::class.java)
@@ -36,44 +40,76 @@ class AnadirEjercicio : AppCompatActivity() {
 
 
         val btnEnviar = findViewById<Button>(R.id.btnanadir)
-        val nombre_ejercicio = findViewById<EditText>(R.id.nombre_ejercicio)
-        val grupo_muscular = findViewById<EditText>(R.id.grupo_muscular)
-        val series_ejercicio = findViewById<EditText>(R.id.series_ejercicio)
-        val repeticiones_ejercicio = findViewById<EditText>(R.id.repeticiones_ejercicio)
+        var nombreEjercicio = findViewById<EditText>(R.id.nombre_ejercicio)
+        var pesoEjercicio = findViewById<EditText>(R.id.peso)
+        var seriesEjercicio = findViewById<EditText>(R.id.series_ejercicio)
+        var repeticionesEjercicio = findViewById<EditText>(R.id.repeticiones_ejercicio)
+
+
+        val idEjercicio = intent.getStringExtra("idEjercicio")
+        if (idEjercicio != null) {
+
+            btnEnviar.text = "Guardar"
+
+            // getStringExtra() busca un dato que fue agregado antes con la clase "nombre"
+            var nombre = intent.getStringExtra("nombre")
+            var peso = intent.getStringExtra("peso")
+            var series = intent.getStringExtra("series")
+            var repeticiones = intent.getStringExtra("repeticiones")
+
+            nombreEjercicio.setText(nombre)
+            pesoEjercicio.setText(peso)
+            seriesEjercicio.setText(series)
+            repeticionesEjercicio.setText(repeticiones)
+        }
 
         btnEnviar.setOnClickListener {
-            val nombre = nombre_ejercicio.text.toString()
-            val grupo = grupo_muscular.text.toString()
-            val series = series_ejercicio.text.toString()
-            val repeticiones = repeticiones_ejercicio.text.toString()
 
-            val nuevoEjercicio = Ejercicios(null, nombre, grupo, series, repeticiones)
+            val idEjercicio = intent.getStringExtra("idEjercicio")
 
-            RetrofitClient.instance.crearEjercicio(nuevoEjercicio)
-                .enqueue(object : retrofit2.Callback<Ejercicios> {
+            val ejercicio = Ejercicios(
+                _id = idEjercicio,
+                nombre = nombreEjercicio.text.toString().uppercase(),
+                peso = pesoEjercicio.text.toString(),
+                series = seriesEjercicio.text.toString(),
+                repeticiones = repeticionesEjercicio.text.toString()
+            )
 
-                    override fun onResponse(
-                        call: Call<Ejercicios>,
-                        response: Response<Ejercicios>) {
+            val call: Call<Ejercicios> = if (idEjercicio != null) {
 
-                        if (response.isSuccessful) {
-                            println("Ejercicio guardado: ${response.body()}")
-                            nombre_ejercicio.setText("")
-                            grupo_muscular.setText("")
-                            series_ejercicio.setText("")
-                            repeticiones_ejercicio.setText("")
-                        } else {
-                            println("Error en el guardado: ${response.code()}")
-                        }
+                Toast.makeText(this@AnadirEjercicio, "Ejercicio editado con éxito", Toast.LENGTH_SHORT).show()
+                RetrofitClient.instance.editarEjercicio(idEjercicio, ejercicio)
+
+            } else {
+                Toast.makeText(this@AnadirEjercicio, "Ejercicio creado con éxito", Toast.LENGTH_SHORT).show()
+                RetrofitClient.instance.crearEjercicio(ejercicio)
+            }
+
+
+            // Enqueue() lanza la petición en segundo plano y manda los resultados a través
+            // de dos métodos del Callback
+            call.enqueue(object : Callback<Ejercicios> {
+
+                // Se ejecuta cuando la API responde correctamente
+                override fun onResponse(call: Call<Ejercicios>, response: Response<Ejercicios>) {
+                    if(response.isSuccessful){
+                        Log.d("API", "Recibidos: $ejercicio")
+                    } else {
+                        Log.e("API", "Error HTTP: ${response.code()}")
                     }
+                }
 
-                    override fun onFailure(call: Call<Ejercicios>, t: Throwable) {
-                        t.printStackTrace()
-                    }
-                })
+                // Se ejecuta su hubo un error de red, o el parseo de datos no pudo hacerse
+                override fun onFailure(call: Call<Ejercicios>, t: Throwable) {
+                    Log.e("API", "Fallo de red: ${t.message}")
+                    t.printStackTrace()
+                }
+            })
+
+            nombreEjercicio.setText("");
+            pesoEjercicio.setText("")
+            seriesEjercicio.setText("")
+            repeticionesEjercicio.setText("")
         }
     }
-
-
 }
-

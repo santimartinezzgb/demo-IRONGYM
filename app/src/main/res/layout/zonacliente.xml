@@ -28,16 +28,24 @@
         app:layout_constraintWidth_percent="0.7" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerEjercicios"
-        android:layout_width="326dp"
+    <ScrollView
+        android:layout_width="380dp"
         android:layout_height="444dp"
-        android:padding="15sp"
-        android:textAlignment="center"
-        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:paddingStart="30sp"
+        app:layout_constraintTop_toBottomOf="@id/btnAddEjercicio"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="186dp" />
+        tools:layout_editor_absoluteX="5dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerEjercicios"
+            android:layout_width="400dp"
+            android:layout_height="436dp"
+            android:layout_marginTop="20dp"
+
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="59dp" />
+    </ScrollView>
 
     <ImageView
         android:id="@+id/imagenZonaCliente"

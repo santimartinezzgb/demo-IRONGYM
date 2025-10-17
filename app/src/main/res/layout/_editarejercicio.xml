@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/editar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/nombre_ejercicio"
+        android:layout_width="600sp"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del ejercicio"
+        android:layout_marginBottom="50sp"
+        android:textSize="38sp" />
+
+    <EditText
+        android:id="@+id/peso"
+        android:hint="Peso"
+        android:layout_marginBottom="50sp"
+        android:layout_width="600sp"
+        android:layout_height="wrap_content"
+        android:textSize="38sp"/>
+
+    <EditText
+        android:id="@+id/series_ejercicio"
+        android:hint="Series"
+        android:layout_marginBottom="50sp"
+        android:layout_width="600sp"
+        android:layout_height="wrap_content"
+        android:textSize="38sp"/>
+
+    <EditText
+        android:id="@+id/repeticiones_ejercicio"
+        android:hint="Repeticiones"
+        android:layout_marginBottom="50sp"
+        android:layout_width="600sp"
+        android:layout_height="wrap_content"
+        android:textSize="38sp"/>
+
+    <Button
+        android:id="@+id/btn_guardar"
+        android:text="Guardar"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="38sp"/>
+
+    <Button
+        android:id="@+id/btn_cancelar"
+        android:text="Cancelar"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="38sp"/>
+
+</LinearLayout>

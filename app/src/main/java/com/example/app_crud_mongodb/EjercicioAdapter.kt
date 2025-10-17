@@ -28,9 +28,9 @@ class EjercicioAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, pos: Int) {
         val e = lista[pos]
-        holder.datos.text = "\nEjercicio: ${e.nombre}" +
-                "\nGrupo Muscular: ${e.grupomuscular}" +
-                "\nRealizar: (${e.series}x${e.repeticiones})"
+        holder.datos.text = "\n${e.nombre}" +
+                "\nPeso: ${e.peso} kg" +
+                "\nSeries: ${e.series}x${e.repeticiones}"
 
         holder.btnEditar.setOnClickListener { onEditarClick(e) }
         holder.btnEliminar.setOnClickListener { onEliminarClick(e) }

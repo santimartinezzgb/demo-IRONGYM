@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -44,28 +45,32 @@ class ZonaCliente : AppCompatActivity() {
         val variableRecyclerView = findViewById<RecyclerView>(R.id.recyclerEjercicios)
         variableRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Llama a la API para listarle todos los ejercicios
+        // Llama a la API
         RetrofitClient.instance.listarEjercicio().enqueue(object : Callback<List<Ejercicios>> {
             override fun onResponse(
                 call: Call<List<Ejercicios>>,
                 res: Response<List<Ejercicios>>
             ) {
-                if (res.isSuccessful) {
                     val lista = res.body() ?: emptyList()
+
                     variableRecyclerView.adapter = EjercicioAdapter(
                         lista,
-                        // Para editar el ejercicios
                         onEditarClick = { ejercicio ->
-                            startActivity(Intent(this@ZonaCliente, AnadirEjercicio::class.java).apply {
-                                putExtra("idEjercicio", ejercicio._id)
-                            })
-                        },
-                        // Para eliminar el ejercicio
+                            val intent = Intent(this@ZonaCliente, AnadirEjercicio::class.java)
+                            intent.putExtra("idEjercicio", ejercicio._id)
+                            intent.putExtra("nombre", ejercicio.nombre)
+                            intent.putExtra("peso", ejercicio.peso)
+                            intent.putExtra("series", ejercicio.series)
+                            intent.putExtra("repeticiones", ejercicio.repeticiones)
+                            startActivity(intent)
+                        }
+,
                         onEliminarClick = { ejercicio ->
+                            Toast.makeText(this@ZonaCliente, "Ejercicio eliminado con éxito", Toast.LENGTH_SHORT).show()
                             RetrofitClient.instance.eliminarEjercicio(ejercicio._id)
                                 .enqueue(object : Callback<Void> {
                                     override fun onResponse(c: Call<Void>, r: Response<Void>) {
-                                        recreate() // recarga la lista
+                                        this@ZonaCliente.recreate()
                                     }
                                     override fun onFailure(c: Call<Void>, t: Throwable) {
                                         t.printStackTrace()
@@ -73,14 +78,13 @@ class ZonaCliente : AppCompatActivity() {
                                 })
                         }
                     )
-                } else {
-                    println("Error al obtener lista: ${res.code()}")
-                }
+
             }
 
             override fun onFailure(call: Call<List<Ejercicios>>, t: Throwable) {
                 t.printStackTrace()
             }
         })
+
     }
 }

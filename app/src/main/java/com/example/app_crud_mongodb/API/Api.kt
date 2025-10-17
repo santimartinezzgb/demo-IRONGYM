@@ -11,12 +11,13 @@ interface Api {
     @PUT("Ejercicios/{id}")
     fun editarEjercicio(
         @Path("id") id: String,
-        @Body ejercicioEditado: Ejercicios
+        @Body ejercicio: Ejercicios
     ): Call<Ejercicios>
 
     @GET("Ejercicios")
     fun listarEjercicio(): Call<List<Ejercicios>>
 
-    @DELETE("Ejercicios/{id}")
+    @DELETE("ejercicios/{id}")
     fun eliminarEjercicio(@Path("id") id: String?): Call<Void>
+
 }
