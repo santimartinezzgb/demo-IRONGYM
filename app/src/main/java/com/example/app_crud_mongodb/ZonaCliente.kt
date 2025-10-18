@@ -63,8 +63,7 @@ class ZonaCliente : AppCompatActivity() {
                             intent.putExtra("series", ejercicio.series)
                             intent.putExtra("repeticiones", ejercicio.repeticiones)
                             startActivity(intent)
-                        }
-,
+                        },
                         onEliminarClick = { ejercicio ->
                             val builder = androidx.appcompat.app.AlertDialog.Builder(this@ZonaCliente)
                             builder.setTitle("Confirmar")
