@@ -5,19 +5,19 @@ import retrofit2.http.*
 
 interface Api {
 
-    @POST("Ejercicios")
-    fun crearEjercicio(@Body nuevoEjercicio: Ejercicios): Call<Ejercicios>
+    @POST("ejercicios")
+    fun crearEjercicio(@Body nuevoEjercicio: Ejercicio): Call<Ejercicio>
 
-    @PUT("Ejercicios/{id}")
+    @PUT("ejercicios/{id}")
     fun editarEjercicio(
         @Path("id") id: String,
-        @Body ejercicio: Ejercicios
-    ): Call<Ejercicios>
+        @Body ejercicio: Ejercicio
+    ): Call<Ejercicio>
 
-    @GET("Ejercicios")
-    fun listarEjercicio(): Call<List<Ejercicios>>
+    @GET("ejercicios")
+    fun listarEjercicio(): Call<List<Ejercicio>>
 
     @DELETE("ejercicios/{id}")
     fun eliminarEjercicio(@Path("id") id: String?): Call<Void>
-
 }
+

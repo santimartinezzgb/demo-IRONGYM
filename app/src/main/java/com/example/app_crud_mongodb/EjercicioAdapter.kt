@@ -1,17 +1,16 @@
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.app_crud_mongodb.API.Ejercicios
+import com.example.app_crud_mongodb.API.Ejercicio
 import com.example.app_crud_mongodb.R
 
 class EjercicioAdapter(
-    private val lista: List<Ejercicios>,
-    private val onEditarClick: (Ejercicios) -> Unit,
-    private val onEliminarClick: (Ejercicios) -> Unit
+    private val lista: List<Ejercicio>,
+    private val onEditarClick: (Ejercicio) -> Unit,
+    private val onEliminarClick: (Ejercicio) -> Unit
 ) : RecyclerView.Adapter<EjercicioAdapter.ViewHolder>() {
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {

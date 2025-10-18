@@ -11,11 +11,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.app_crud_mongodb.API.Ejercicios
+import com.example.app_crud_mongodb.API.Ejercicio
 import com.example.app_crud_mongodb.API.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class AnadirEjercicio : AppCompatActivity() {
 
@@ -48,7 +49,6 @@ class AnadirEjercicio : AppCompatActivity() {
 
         val idEjercicio = intent.getStringExtra("idEjercicio")
         if (idEjercicio != null) {
-
             btnEnviar.text = "Guardar"
 
             // getStringExtra() busca un dato que fue agregado antes con la clase "nombre"
@@ -65,17 +65,15 @@ class AnadirEjercicio : AppCompatActivity() {
 
         btnEnviar.setOnClickListener {
 
-            val idEjercicio = intent.getStringExtra("idEjercicio")
-
-            val ejercicio = Ejercicios(
-                _id = idEjercicio,
+            val ejercicio = Ejercicio(
+                _id= idEjercicio,
                 nombre = nombreEjercicio.text.toString().uppercase(),
                 peso = pesoEjercicio.text.toString(),
                 series = seriesEjercicio.text.toString(),
                 repeticiones = repeticionesEjercicio.text.toString()
             )
 
-            val call: Call<Ejercicios> = if (idEjercicio != null) {
+            val call: Call<Ejercicio> = if (idEjercicio != null) {
 
                 Toast.makeText(this@AnadirEjercicio, "Ejercicio editado con éxito", Toast.LENGTH_SHORT).show()
                 RetrofitClient.instance.editarEjercicio(idEjercicio, ejercicio)
@@ -88,10 +86,10 @@ class AnadirEjercicio : AppCompatActivity() {
 
             // Enqueue() lanza la petición en segundo plano y manda los resultados a través
             // de dos métodos del Callback
-            call.enqueue(object : Callback<Ejercicios> {
+            call.enqueue(object : Callback<Ejercicio> {
 
                 // Se ejecuta cuando la API responde correctamente
-                override fun onResponse(call: Call<Ejercicios>, response: Response<Ejercicios>) {
+                override fun onResponse(call: Call<Ejercicio>, response: Response<Ejercicio>) {
                     if(response.isSuccessful){
                         Log.d("API", "Recibidos: $ejercicio")
                     } else {
@@ -100,7 +98,7 @@ class AnadirEjercicio : AppCompatActivity() {
                 }
 
                 // Se ejecuta su hubo un error de red, o el parseo de datos no pudo hacerse
-                override fun onFailure(call: Call<Ejercicios>, t: Throwable) {
+                override fun onFailure(call: Call<Ejercicio>, t: Throwable) {
                     Log.e("API", "Fallo de red: ${t.message}")
                     t.printStackTrace()
                 }

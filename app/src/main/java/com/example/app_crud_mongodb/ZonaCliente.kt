@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.app_crud_mongodb.API.Ejercicios
+import com.example.app_crud_mongodb.API.Ejercicio
 import com.example.app_crud_mongodb.API.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -46,10 +46,10 @@ class ZonaCliente : AppCompatActivity() {
         variableRecyclerView.layoutManager = LinearLayoutManager(this)
 
         // Llama a la API
-        RetrofitClient.instance.listarEjercicio().enqueue(object : Callback<List<Ejercicios>> {
+        RetrofitClient.instance.listarEjercicio().enqueue(object : Callback<List<Ejercicio>> {
             override fun onResponse(
-                call: Call<List<Ejercicios>>,
-                res: Response<List<Ejercicios>>
+                call: Call<List<Ejercicio>>,
+                res: Response<List<Ejercicio>>
             ) {
                     val lista = res.body() ?: emptyList()
 
@@ -66,22 +66,40 @@ class ZonaCliente : AppCompatActivity() {
                         }
 ,
                         onEliminarClick = { ejercicio ->
-                            Toast.makeText(this@ZonaCliente, "Ejercicio eliminado con éxito", Toast.LENGTH_SHORT).show()
-                            RetrofitClient.instance.eliminarEjercicio(ejercicio._id)
-                                .enqueue(object : Callback<Void> {
-                                    override fun onResponse(c: Call<Void>, r: Response<Void>) {
-                                        this@ZonaCliente.recreate()
-                                    }
-                                    override fun onFailure(c: Call<Void>, t: Throwable) {
-                                        t.printStackTrace()
-                                    }
-                                })
+                            val builder = androidx.appcompat.app.AlertDialog.Builder(this@ZonaCliente)
+                            builder.setTitle("Confirmar")
+                            builder.setMessage("¿Estás seguro de que quieres eliminar este ejercicio?")
+
+                            builder.setPositiveButton("Sí") { dialog, _ ->
+
+                                RetrofitClient.instance.eliminarEjercicio(ejercicio._id)
+                                    .enqueue(object : Callback<Void> {
+                                        override fun onResponse(c: Call<Void>, r: Response<Void>) {
+                                            Toast.makeText(this@ZonaCliente, "Ejercicio eliminado con éxito", Toast.LENGTH_SHORT).show()
+                                            this@ZonaCliente.recreate()
+                                        }
+
+                                        override fun onFailure(c: Call<Void>, t: Throwable) {
+                                            t.printStackTrace()
+                                            Toast.makeText(this@ZonaCliente, "Error al eliminar el ejercicio", Toast.LENGTH_SHORT).show()
+                                        }
+                                    })
+                                dialog.dismiss()
+                            }
+
+                            builder.setNegativeButton("No") { dialog, _ ->
+                                dialog.dismiss()
+                            }
+
+                            val dialog = builder.create()
+                            dialog.show()
                         }
+
                     )
 
             }
 
-            override fun onFailure(call: Call<List<Ejercicios>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Ejercicio>>, t: Throwable) {
                 t.printStackTrace()
             }
         })
