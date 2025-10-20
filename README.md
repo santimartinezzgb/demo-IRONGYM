@@ -37,8 +37,7 @@ GET     /api/ejercicios        -> Listar ejercicios
 POST    /api/ejercicios        -> Crear nuevo ejercicio
 PUT     /api/ejercicios/:id    -> Editar ejercicio
 DELETE  /api/ejercicios/:id    -> Eliminar ejercicio
-
----
+```
 
 ---
 
