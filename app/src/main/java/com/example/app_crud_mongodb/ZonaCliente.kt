@@ -66,6 +66,9 @@ class ZonaCliente : AppCompatActivity() {
                         },
 
                         onEliminarClick = { ejercicio ->
+
+                            // Builder para dar mensaje de alerta antes de ejectar onELiminarClick,
+                            // Al clicar en sí, procede a seguir la función, al clicar no, anula la eliminación
                             val builder = androidx.appcompat.app.AlertDialog.Builder(this@ZonaCliente)
                             builder.setTitle("Confirmar")
                             builder.setMessage("¿Estás seguro de que quieres eliminar este ejercicio?")
